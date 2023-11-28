@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS OnePiece_db;
+
+CREATE DATABASE OnePiece_db;
