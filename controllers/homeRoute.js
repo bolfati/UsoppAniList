@@ -1,14 +1,16 @@
-const router =nrequire('express').Router();
+const router = require('express').Router();
+
 //fill in path after auth is added in utils folder 
 const auth = require('');
 
 //home route
-router.get('/', aync (req, res) => {
-    try{
+router.get('/', async (req, res) => {
+    
+    try {
         
     }
-    catch (err){
-        
+    catch (err) {
+
     }
 })
 
