@@ -2,16 +2,29 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 const { Model, DataTypes } = require('sequelize');
 
-/*Comments Table, Anime Table */
-
+class Anime extends Model {}
 //Anime Table
 Anime.init({
-    AnimeID: {
-        type: DataTypes.INTERGER,
-        primaryKey: true,
-        autoIncrement: true,
-    },
-    Title: ,
-    CoverImage: ,
-    Synopsis: ,
-})
+  AnimeID: {
+    type: DataTypes.INTERGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  Title: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  CoverImage: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  Synopsis: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  sequelize,
+  timestamps: false,
+  modelName: 'anime',
+});
+
+module.exports = Anime;
