@@ -21,7 +21,11 @@ Comments.init({
     },
   },
   content: {
-    //TODO:fill this in},
+    type: DataTypes.TEXT,
+    allowNull: false,
+    validate: {
+      len: [280],
+    },
   },
   sequelize,
   timestamps: true,
