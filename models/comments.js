@@ -1,5 +1,4 @@
 const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt');
 const { Model, DataTypes } = require('sequelize');
 
 class Comments extends Model {}
@@ -30,3 +29,5 @@ Comments.init({
   underscored: true,
   modelName: 'comments',
 });
+
+module.exports = Comments;
