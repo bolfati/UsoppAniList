@@ -5,7 +5,7 @@ class Anime extends Model {}
 //Anime Table
 Anime.init({
   AnimeID: {
-    type: DataTypes.INTERGER,
+    type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
