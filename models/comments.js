@@ -31,7 +31,7 @@ Comments.init({
     type: DataTypes.INTEGER,
     references: {
       model: 'anime',
-      key: 'AnimeID',
+      key: 'animeId',
     },
   },
   sequelize,
