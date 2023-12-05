@@ -7,13 +7,13 @@ class Comments extends Model {}
 
 Comments.init({
   comment_id: {
-    type: DataTypes.INTERGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
   },
   user_id: {
-    type: DataTypes.INTERGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
     references: {
       model: 'user',
@@ -25,6 +25,13 @@ Comments.init({
     allowNull: false,
     validate: {
       len: [280],
+    },
+  },
+  AnimeID: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: 'anime',
+      key: 'AnimeID',
     },
   },
   sequelize,
