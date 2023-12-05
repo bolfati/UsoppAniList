@@ -5,6 +5,7 @@
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
+        "seed": "node seeds/seed.js",
         "build-css": "tailwindcss -i ./src/input.css -o ./public/css/styles.css --watch",
         "watch": "tailwindcss build /src/styles.css -o public/css/styles.css --watch"
     },
