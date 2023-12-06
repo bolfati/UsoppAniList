@@ -1,10 +1,9 @@
+const router = require('express').Router();
+const { User } = require('../../models');
 
-const router = require("express").Router();
-const { User } = require("../../models");
-
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
   User.findAll({
-    attributes: { exclude: ["password"] },
+    attributes: { exclude: ['password'] },
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
@@ -13,14 +12,16 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/login", async (req, res) => {
+router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { username: req.body.username } });
+    const userData = await User.findOne({
+      where: { username: req.body.username },
+    });
 
     if (!userData) {
       res
         .status(400)
-        .json({ message: "Your username or password is wrong brother!" });
+        .json({ message: 'Your username or password is wrong brother!' });
       return;
     }
 
@@ -29,7 +30,7 @@ router.post("/login", async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: "Your email or password is wrong brother!" });
+        .json({ message: 'Your email or password is wrong brother!' });
       return;
     }
 
@@ -39,7 +40,7 @@ router.post("/login", async (req, res) => {
 
       res
         .status(200)
-        .json({ user: userData, message: "You have logged in brother!" });
+        .json({ user: userData, message: 'You have logged in brother!' });
     });
   } catch (err) {
     res.status(400).json(err);

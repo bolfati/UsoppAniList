@@ -1,12 +1,19 @@
 const router = require('express').Router();
-
+const sequelize = require('sequelize');
+//TODO: add authentication and finish route
 //fill in path after auth is added in utils folder
-const auth = require('');
+const withAuth = require('../utils/auth');
+const path = require('path');
 
 //home route
-router.get('/', async (req, res) => {
-  try {
-  } catch (err) {}
+router.get('/', withAuth, async (req, res) => {
+  if (!req.session.loggedIn) {
+    //TODO: finish this
+    return res.render('homepage');
+  }
+  // try {
+  //   res.\\\
+  // } catch (err) {}
 });
 
 router.get('/login', (req, res) => {
@@ -17,3 +24,5 @@ router.get('/login', (req, res) => {
     res.status().json(err);
   }
 });
+
+module.exports = router;
