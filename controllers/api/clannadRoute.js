@@ -41,21 +41,22 @@ router.get('/videos/:id', async (req, res) => {
     fs.createReadStream(videoPath).pipe(res);
   }
 });
-// router.post('/clannad', upload.single('file'), async (req, res) => {
-//   const { title, description, tags } = req.body;
 
-//   const video = new Video({
-//     title,
-//     description,
-//     tags,
-//     url: req.file.path,
-//     thumbnailUrl: 'placeholder',
-//     duration: 0,
-//   });
+router.post('/clannad', upload.single('file'), async (req, res) => {
+  const { title, description, tags } = req.body;
 
-//   await video.save();
+  const video = new Video({
+    title,
+    description,
+    tags,
+    url: req.file.path,
+    thumbnailUrl: 'placeholder',
+    duration: 0,
+  });
 
-//   res.json(video);
-// });
+  await video.save();
+
+  res.json(video);
+});
 
 module.exports = router;
