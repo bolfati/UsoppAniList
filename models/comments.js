@@ -27,7 +27,7 @@ Comments.init({
       len: [280],
     },
   },
-  AnimeID: {
+  animeId: {
     type: DataTypes.INTEGER,
     references: {
       model: 'anime',

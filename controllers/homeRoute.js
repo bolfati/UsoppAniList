@@ -6,14 +6,12 @@ const withAuth = require('../utils/auth');
 const path = require('path');
 
 //home route
-router.get('/', withAuth, async (req, res) => {
-  if (!req.session.loggedIn) {
-    //TODO: finish this
+router.get('/', async (req, res) => {
+  try {
     return res.render('homepage');
+  } catch (err) {
+    return res.status(404).json(err);
   }
-  // try {
-  //   res.\\\
-  // } catch (err) {}
 });
 
 router.get('/angelbeats', withAuth, async (req, res) => {
@@ -53,7 +51,7 @@ router.get('/login', (req, res) => {
     return res.render('login');
   } catch (err) {
     //error status here
-    res.status().json(err);
+    res.status(500).json(err);
   }
 });
 
@@ -62,7 +60,7 @@ router.get('/signup', (req, res) => {
     return res.render('signup');
   } catch (err) {
     //error status here
-    res.status().json(err);
+    res.status(500).json(err);
   }
 });
 

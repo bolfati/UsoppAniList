@@ -14,6 +14,24 @@ router.get('/onepiece', withAuth, async (req, res) => {
   res.sendFile(videoPath);
 });
 
+router.get('/onepiece', async (req, res) => {
+  try{
+  const retrievePosts = await Comments.findAll({
+    include: [{ model: User }]
+  });
+
+  const transformingPost = retrievePosts.map((retrievePosts) => retrievePosts.get({ plain: true }));
+  res.render('onepiece', {
+    retrievePosts,
+  });
+}
+catch(err) {
+  console.log(err)
+  return res.status(500).json(err);
+}
+
+});
+
 router.post('/addAnime', withAuth, async (req, res) => {
   try {
     const savingAnime = {
@@ -27,6 +45,20 @@ router.post('/addAnime', withAuth, async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Error adding anime to database' });
+  }
+});
+
+router.post('/:id', async (req, res) => {
+  try {
+    const message = await Comments.create({
+      ..req.body,
+      post_id: req.params.id,
+      user_id: req.session.user_id
+    });
+    res.json({message})
+  }
+  catch(err) {
+    res.status(500).json(err);
   }
 });
 

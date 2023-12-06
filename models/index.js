@@ -19,6 +19,7 @@ Comments.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
+//TODO:favoriting anime work in the future
 User.belongsToMany(Anime, {
   through: 'userAnime',
   foreignKey: 'userId',
