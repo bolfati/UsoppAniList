@@ -53,7 +53,7 @@ router.post('/onepiece/:id', async (req, res) => {
   try {
     const message = await Comments.create({
       ...req.body,
-      comment_id: req.params.id,
+      anime_id: req.params.id,
       user_id: req.session.user_id,
     });
     res.json({ message });
