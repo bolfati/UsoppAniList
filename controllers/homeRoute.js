@@ -51,7 +51,7 @@ router.get('/login', (req, res) => {
     return res.render('login');
   } catch (err) {
     //error status here
-    res.status(500).json(err);
+    res.status().json(err);
   }
 });
 
@@ -60,7 +60,7 @@ router.get('/signup', (req, res) => {
     return res.render('signup');
   } catch (err) {
     //error status here
-    res.status(500).json(err);
+    res.status().json(err);
   }
 });
 
