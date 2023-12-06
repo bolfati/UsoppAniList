@@ -24,3 +24,5 @@ router.get('/login', (req, res) => {
     res.status().json(err);
   }
 });
+
+module.exports = router;
