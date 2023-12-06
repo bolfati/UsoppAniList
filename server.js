@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 // Set up sessions with cookies
 //TODO: finish setting up cookies in server.js
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SESSION_SECRET,
   cookie: {
     // Stored in milliseconds
     maxAge: 24 * 60 * 60 * 1000, // expires after 1 day
