@@ -5,7 +5,7 @@ const angelBeatsRoute = require('./angelBeatsRoute');
 const clannadRoute = require('./clannadRoute');
 const onePieceRoute = require('./onePieceRoute');
 const violetRoute = require('./violetEvergardenRoute');
-const userRoutes = require('./userRoutes');
+const userRoutes = require('./user-routes');
 
 //router.use for all below
 router.use('/angelbeats', angelBeatsRoute);

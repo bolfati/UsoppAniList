@@ -6,12 +6,14 @@ const withAuth = require('../utils/auth');
 const path = require('path');
 
 //home route
-router.get('/', async (req, res) => {
-  try {
+router.get('/', withAuth, async (req, res) => {
+  if (!req.session.loggedIn) {
+    //TODO: finish this
     return res.render('homepage');
-  } catch (err) {
-    return res.status(404).json(err);
   }
+  // try {
+  //   res.\\\
+  // } catch (err) {}
 });
 
 router.get('/angelbeats', withAuth, async (req, res) => {
