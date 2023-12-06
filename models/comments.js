@@ -3,8 +3,6 @@ const { Model, DataTypes } = require('sequelize');
 
 class Comments extends Model {}
 
-//Comments Table
-
 Comments.init({
   comment_id: {
     type: DataTypes.INTEGER,
@@ -27,13 +25,14 @@ Comments.init({
       len: [280],
     },
   },
-  animeId: {
+  anime_id: {
     type: DataTypes.INTEGER,
     references: {
       model: 'anime',
-      key: 'animeId',
+      key: 'anime_id',
     },
   },
+}, {
   sequelize,
   timestamps: true,
   freezeTableName: true,
