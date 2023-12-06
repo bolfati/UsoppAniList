@@ -22,13 +22,13 @@ Comments.belongsTo(User, {
 //TODO:favoriting anime work in the future
 User.belongsToMany(Anime, {
   through: 'userAnime',
-  foreignKey: 'userId',
+  foreignKey: 'user_id',
   otherKey: 'animeId',
 });
 
 Anime.belongsToMany(User, {
   through: 'userAnime',
   foreignKey: 'animeId',
-  otherKey: 'userId',
+  otherKey: 'user_id',
 });
 module.exports = { Anime, Comments, User };
