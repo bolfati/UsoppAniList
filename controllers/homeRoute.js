@@ -16,12 +16,35 @@ router.get('/', withAuth, async (req, res) => {
   // } catch (err) {}
 });
 
-router.get('/signup', (req, res) => {
+router.get('/angelbeats', withAuth, async (req, res) => {
   try {
-    return res.render('signup');
+    return res.render('angelbeats');
   } catch (err) {
-    //error status here
-    res.status().json(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/clannad', withAuth, async (req, res) => {
+  try {
+    return res.render('clannad');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/onepiece', withAuth, async (req, res) => {
+  try {
+    return res.render('onepiece');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/violetevergarden', withAuth, async (req, res) => {
+  try {
+    return res.render('violetevergarden');
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
