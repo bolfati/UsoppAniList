@@ -6,14 +6,14 @@ const withAuth = require('../utils/auth');
 const path = require('path');
 
 //home route
-router.get('/', async (req, res) => {
-  if(!req.session.loggedIn){
+router.get('/', withAuth, async (req, res) => {
+  if (!req.session.loggedIn) {
     //TODO: finish this
-    return res.render('homepage')
+    return res.render('homepage');
   }
-  try {
-    res.\\\
-  } catch (err) {}
+  // try {
+  //   res.\\\
+  // } catch (err) {}
 });
 
 router.get('/login', (req, res) => {
