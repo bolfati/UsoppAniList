@@ -9,17 +9,20 @@ Anime.init({
     primaryKey: true,
     autoIncrement: true,
   },
-  Title: {
+  title: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  CoverImage: {
+  thumbnail: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  Synopsis: {
+  description: {
     type: DataTypes.TEXT,
     allowNull: true,
+  },
+  tags: {
+    type: DataTypes.STRING,
   },
   sequelize,
   timestamps: false,

@@ -16,6 +16,15 @@ router.get('/', withAuth, async (req, res) => {
   // } catch (err) {}
 });
 
+router.get('/signup', (req, res) => {
+  try {
+    return res.render('signup');
+  } catch (err) {
+    //error status here
+    res.status().json(err);
+  }
+});
+
 router.get('/login', (req, res) => {
   try {
     return res.render('login');
