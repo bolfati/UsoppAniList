@@ -31,4 +31,17 @@ router.post('/addAnime', withAuth, async (req, res) => {
   }
 });
 
+router.post('/clannad/:id', async (req, res) => {
+  try {
+    const message = await Comments.create({
+      ...req.body,
+      comment_id: req.params.id,
+      user_id: req.session.user_id,
+    });
+    res.json({ message });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
