@@ -2,9 +2,9 @@ const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
 
 class Anime extends Model {}
-//Anime Table
+
 Anime.init({
-  animeId: {
+  id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
@@ -24,7 +24,16 @@ Anime.init({
   tags: {
     type: DataTypes.STRING,
   },
+  anime_id: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: 'anime', // Name of the referenced table
+      key: 'id', // Name of the referenced column
+    },
+  },
+}, {
   sequelize,
+  underscored: true,
   timestamps: false,
   modelName: 'anime',
 });
