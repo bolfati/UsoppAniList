@@ -49,21 +49,19 @@ router.get('/violetevergarden', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  try {
-    return res.render('login');
-  } catch (err) {
-    //error status here
-    res.status().json(err);
+  if (req.session.logged_in) {
+    res.redirect('/dashboard');
+    return;
   }
+  res.render('login');
 });
 
 router.get('/signup', (req, res) => {
-  try {
-    return res.render('signup');
-  } catch (err) {
-    //error status here
-    res.status().json(err);
+  if (req.session.logged_in) {
+    res.redirect('/dashboard');
+    return;
   }
+  res.render('signup');
 });
 
 module.exports = router;
