@@ -10,16 +10,19 @@ const upload = multer({ dest: 'uploads/' });
 
 router.post('/clannad', upload.single('file'), async (req, res) => {
   const { title, description, tags } = req.body;
-});
-const video = new Video({
-  title,
-  description,
-  tags,
-  url: req.file.path,
-  thumbnailUrl: 'placeholder',
-  duration: 0,
+
+  const video = new Video({
+    title,
+    description,
+    tags,
+    url: req.file.path,
+    thumbnailUrl: 'placeholder',
+    duration: 0,
+  });
+
+  await video.save();
+
+  res.json(video);
 });
 
-await video.save();
-
-res.json(video);
+module.exports = router;
