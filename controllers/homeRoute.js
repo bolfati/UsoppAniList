@@ -34,4 +34,13 @@ router.get('/login', (req, res) => {
   }
 });
 
+router.get('/signup', (req, res) => {
+  try {
+    return res.render('signup');
+  } catch (err) {
+    //error status here
+    res.status().json(err);
+  }
+});
+
 module.exports = router;
