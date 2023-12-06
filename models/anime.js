@@ -4,7 +4,7 @@ const { Model, DataTypes } = require('sequelize');
 class Anime extends Model {}
 //Anime Table
 Anime.init({
-  animeId: {
+  ad: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
