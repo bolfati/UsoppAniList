@@ -6,20 +6,22 @@ const range = require('range-parser');
 const withAuth = require('../../utils/auth');
 const multer = require('multer');
 
-const upload = multer({ dest: 'uploads/'});
+const upload = multer({ dest: 'uploads/' });
 
 router.post('/angelbeats', upload.single('file'), async (req, res) => {
-    const { title, description, tags } = req.body;
-})
-    const video = new Video ({
-        title,
-        description,
-        tags,
-        url: req.file.path,
-        thumbnailUrl: 'placeholder',
-        duration: 0,
-    });
+  const { title, description, tags } = req.body;
 
-    await video.save();
+  const video = new Video({
+    title,
+    description,
+    tags,
+    url: req.file.path,
+    thumbnailUrl: 'placeholder',
+    duration: 0,
+  });
 
-    res.json(video);
+  await video.save();
+
+  res.json(video);
+});
+module.exports = router;
