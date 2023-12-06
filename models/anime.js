@@ -13,9 +13,9 @@ Anime.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
-  thumbnail: {
+  videoUrl: {
     type: DataTypes.STRING,
-    allowNull: true,
+    allowNull: false,
   },
   description: {
     type: DataTypes.TEXT,
