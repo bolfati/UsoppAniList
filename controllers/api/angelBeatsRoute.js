@@ -1,27 +1,60 @@
 const router = require('express').Router();
 const path = require('path');
 const fs = require('fs');
-const Video = require('../../src/animeVids/AngelBeats.mp4');
+const Anime = require('../../models/anime');
+// const Video = require('../../src/animeVids/AngelBeats.mp4');
 const range = require('range-parser');
 const withAuth = require('../../utils/auth');
-const multer = require('multer');
 
-const upload = multer({ dest: 'uploads/' });
+router.get('/videos/:id', async (req, res) => {
+  const video = await Anime.findById(req.params.id);
 
-router.post('/angelbeats', upload.single('file'), async (req, res) => {
-  const { title, description, tags } = req.body;
+  if (!video) {
+    return res.sendStatus(404);
+  }
 
-  const video = new Video({
-    title,
-    description,
-    tags,
-    url: req.file.path,
-    thumbnailUrl: 'placeholder',
-    duration: 0,
-  });
+  const videoPath = video.url;
+  const stat = fs.statSync(videoPath);
+  const fileSize = stat.size;
+  const rangeHeader = req.headers.range;
 
-  await video.save();
+  if (rangeHeader) {
+    const rangeRequest = range(fileSize, rangeHeader);
 
-  res.json(video);
+    res.status(206);
+    res.set({
+        'Content-Range' `bytes ${rangeRequest[0].start}-${rangeRequest[0].end}/${fileSize}`,
+        'Accept-Ranges': 'bytes',
+        'Content-Length' : rangeRequest[0].end - rangeRequest[0].start + 1,
+        'Content-Type': 'video/mp4',
+    });
+
+    fs.createReadStream(videoPath, {
+        start: rangeRequest[0].start,
+        end: rangeRequest[0].end,
+    }).pipe(res);
+  } else {
+    res.set({
+        'Content-Length': fileSize,
+        'Content-Type': 'video/mp4',
+    });
+    fs.createReadStream(videoPath).pipe(res);
+  }
 });
+// router.post('/angelbeats', upload.single('file'), async (req, res) => {
+//   const { title, description, tags } = req.body;
+
+//   const video = new Video({
+//     title,
+//     description,
+//     tags,
+//     url: req.file.path,
+//     thumbnailUrl: 'placeholder',
+//     duration: 0,
+//   });
+
+//   await video.save();
+
+//   res.json(video);
+// });
 module.exports = router;
