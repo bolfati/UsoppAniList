@@ -7,8 +7,8 @@
 </head>
 <body class="text-gray-600 font-serif">
 
-    <div><!-- content wrapper-->
-        <div>
+    <div class="grid md:grid-cols-3"><!-- content wrapper-->
+        <div class="md:col-span-1">
             <nav>
                 <div>
                     <h1 class="font-bold uppercase p-4 border-b border-yellow-200">
@@ -35,29 +35,59 @@
             </nav>
         </div>   <!-- end of nav -->
 
-        <main class="px-20 py-6">
-            <div class="flex justify-end">
-                <a href="#" class="text-red-700">Log In</a>
-                <a href="#" class="text-red-700 ml-2">Sign Up</a>
+        <main class="px-20 py-6 bg-yellow-100 md:col-span-2">
+            <div class="flex justify-center md:justify-end">
+                <a href="#" class="btn text-red-700">Log In</a>
+                <a href="#" class="btn text-red-700 ml-2">Sign Up</a>
             </div>
 
             <div>
               <h3 class="font-bold text-6xl mt-12 pb-2 border-b border-yellow-200">Anime List</h3>
 
               
-              <div class="mt-8">
+              <div class="mt-8 grid lg:grid-cols-2 gap-5">
                 <!--cards go here -->
-                <div>
-                    <img src="img/angelbeats.jpg" alt="angel beats cover image">
-                    <div>
-                        <span>Angel Beats--</span>
-                        <span>Genres: Sad</span>
+                <div class="card">
+                    <img src="img/angelbeats.jpg" alt="angel beats cover image" class="w-full h-32 sm:h-48 object-cover">
+                    <div class="m-4">
+                        <span class="font-bold">Angel Beats</span>
+                        <span class="block text-gray-600 text-sm">Genres: Sad</span>
+                    </div>
+                    <div class="badge">
+                        <span>Most Popular</span>
                     </div>
                 </div>  
+                <div class="card">
+                    <img src="img/onepiece.png" alt="one piece cover image" class="w-full h-32 sm:h-48 object-cover">
+                    <div class="m-4">
+                        <span class="font-bold">One Piece</span>
+                        <span class="block text-gray-600 text-sm">Genres: Adventure (also can be sad)</span>
+                    </div>
+                    <div class="badge">
+                        <span>Long Story</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/clannad.jpg" alt="clannad cover image" class="w-full h-32 sm:h-48 object-cover">
+                    <div class="m-4">
+                        <span class="font-bold">Clannad</span>
+                        <span class="block text-gray-600 text-sm">Genres: Big Sad</span>
+                    </div>
+                    <div class="badge">
+                        <span>Watch if you want to cry</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/aquaman.jpg" alt="bijan cover image" class="w-full h-32 sm:h-48 object-cover">
+                    <div class="m-4">
+                        <span class="font-bold">Aquaman and the Lost Kingdom</span>
+                        <span class="block text-gray-600 text-sm">Genres: Bijan</span>
+                    </div>
+                    <div class="badge">
+                        <span>Click for a surprise</span>
+                    </div>
+                </div>
             </div>
-
-
-            <h3 class="font-bold mt-12 pb-2 border-b border-yellow-200">Most Popular</h3>
 
             <div class="mt-8">
                 <!-- cards go here -->
