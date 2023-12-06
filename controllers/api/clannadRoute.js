@@ -50,7 +50,7 @@ router.post('/addAnime', withAuth, async (req, res) => {
   }
 });
 
-router.post('/:id', async (req, res) => {
+router.post('/clannad/:id', async (req, res) => {
   try {
     const message = await Comments.create({
       ...req.body,
