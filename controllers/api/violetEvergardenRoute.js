@@ -33,23 +33,6 @@ router.get('/violetevergarden/comments', async (req, res) => {
   }
 });
 
-router.post('/addAnime', withAuth, async (req, res) => {
-  try {
-    const savingAnime = {
-      title: 'Violet Evergarden',
-      videoUrl: '../../src/animeVids/VioletEverGarden.mp4',
-      description:
-        'In the aftermath of a great war, Violet Evergarden, a young female ex-soldier, gets a job at a writers agency and goes on assignments to create letters that can connect people. After four long years of conflict, The Great War has finally come to an end.',
-    };
-
-    const savedAnime = await Anime.create(savingAnime);
-    res.status(201).json(savedAnime);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Error adding anime to database' });
-  }
-});
-
 router.post('/violetevergarden/:id', async (req, res) => {
   try {
     const message = await Comments.create({

@@ -33,6 +33,7 @@ router.get('/angelbeats/comments', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 // router.post('/addAnime', withAuth, async (req, res) => {
 //   try {
 //     const savingAnime = {
@@ -50,6 +51,8 @@ router.get('/angelbeats/comments', async (req, res) => {
 //   }
 // });
 
+=======
+>>>>>>> dd4b9ce5f8c683e5a9365e0f4eab0dffd1087052
 router.post('/angelbeats/:id', async (req, res) => {
   try {
     const message = await Comments.create({

@@ -33,22 +33,6 @@ router.get('/onepiece/comments', async (req, res) => {
   }
 });
 
-router.post('/addAnime', withAuth, async (req, res) => {
-  try {
-    const savingAnime = {
-      title: 'One Piece',
-      videoUrl: '../../src/animeVids/RickRolld.mp4',
-      description: 'NEVER GONNA GIVE YOU UP, NEVER GONNA LET YOU DOWN',
-    };
-
-    const savedAnime = await Anime.create(savingAnime);
-    res.status(201).json(savedAnime);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Error adding anime to database' });
-  }
-});
-
 router.post('/onepiece/:id', async (req, res) => {
   try {
     const message = await Comments.create({

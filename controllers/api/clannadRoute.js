@@ -33,23 +33,6 @@ router.get('/clannad/comments', async (req, res) => {
   }
 });
 
-router.post('/addAnime', withAuth, async (req, res) => {
-  try {
-    const savingAnime = {
-      title: 'Clannad',
-      videoUrl: '../../src/animeVids/Clannad.mp4',
-      description:
-        'The story follows the life of Tomoya Okazaki, from adolescence to adulthood. As an average high school student, he meets many people in his last year at school, including five girls, whose individual problems he helps resolve, and his life is further detailed after graduating from high school.',
-    };
-
-    const savedAnime = await Anime.create(savingAnime);
-    res.status(201).json(savedAnime);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Error adding anime to database' });
-  }
-});
-
 router.post('/clannad/:id', async (req, res) => {
   try {
     const message = await Comments.create({
