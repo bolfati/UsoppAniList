@@ -1,10 +1,14 @@
 <main class='container mt-5'>
+  <video controls preload="auto" width="768" height="576">
+    <source src="{{videoPath}}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+ 
+  
   <article>
     <h1>{{title}}</h1>
-    <p>Created by: {{user.username}} | Date: {{format_date createdAt}}</p>
     <p>{{content}}</p>
   </article>
-  {{#if logged_in}}
     <form class='new-blog-comment-form' class='mb-3'>
       <div class='mb-3'>
         <label for='comment' class='form-label'>Add Comment:</label>
@@ -17,7 +21,6 @@
       </div>
       <button type='submit' class='btn btn-primary'>Submit</button>
     </form>
-  {{/if}}
   <h2>Comment History:</h2>
   {{#each comments}}
     <div class='comment mb-3'>
