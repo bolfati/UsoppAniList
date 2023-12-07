@@ -1,33 +1,34 @@
-const Anime = require('./anime');
-const Comments = require('./comments');
-const User = require('./user');
+const Anime = require('./anime.js');
+const Comment = require('./comment.js');
+const User = require('./user.js');
 
 //TODO: Define relationships
-Anime.hasMany(Comments, {
-  foreignKey: 'animeId',
+Anime.hasMany(Comment, {
+  foreignKey: 'anime_id',
 });
 
-Comments.belongsTo(Anime, {
-  foreignKey: 'animeId',
+Comment.belongsTo(Anime, {
+  foreignKey: 'anime_id',
 });
 
-User.hasMany(Comments, {
+User.hasMany(Comment, {
   foreignKey: 'user_id',
 });
 
-Comments.belongsTo(User, {
+Comment.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-User.belongsToMany(Anime, {
-  through: 'userAnime',
-  foreignKey: 'userId',
-  otherKey: 'animeId',
-});
+// //TODO:favoriting anime work in the future
+// User.belongsToMany(Anime, {
+//   // through: 'userAnime',
+//   foreignKey: 'user_id',
+//   // otherKey: 'anime_id',
+// });
 
-Anime.belongsToMany(User, {
-  through: 'userAnime',
-  foreignKey: 'animeId',
-  otherKey: 'userId',
-});
-module.exports = { Anime, Comments, User };
+// Anime.belongsToMany(User, {
+//   // through: 'userAnime',
+//   foreignKey: 'anime_id',
+//   // otherKey: 'user_id',
+// });
+module.exports = { Anime, Comment, User };

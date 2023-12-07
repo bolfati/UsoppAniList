@@ -1,27 +1,33 @@
 {
-    "name": "user-api",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-        "start": "node server.js",
-        "seed": "node seeds/seed.js",
-        "build-css": "tailwindcss -i ./src/input.css -o ./public/css/styles.css --watch",
-        "watch": "tailwindcss build /src/styles.css -o public/css/styles.css --watch"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "dotenv": "^8.2.0",
-        "eslint": "^8.54.0",
-        "eslint-config-prettier": "^9.0.0",
-        "express": "^4.17.1",
-        "mysql2": "^2.2.1",
-        "prettier": "^3.1.0",
-        "sequelize": "^6.3.5"
-    },
-    "devDependencies": {
-        "postcss": "^8.4.32",
-        "tailwindcss": "^3.3.6"
-    }
+  "name": "projectafterstory-db",
+  "version": "1.0.0",
+  "description": "Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seeds/seed.js",
+    "build-css": "tailwindcss -i ./src/input.css -o ./public/css/styles.css --watch",
+    "watch": "tailwindcss build /src/styles.css -o public/css/styles.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-session-sequelize": "^7.0.4",
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.0",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
+  },
+  "keywords": []
 }

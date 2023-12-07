@@ -1,0 +1,24 @@
+<main class='container mt-5'>
+  <iframe width="1280" height="720" src="https://www.youtube.com/embed/BBJa32lCaaY">
+  </iframe>
+
+
+  <article>
+    <h1>{{title}}</h1>
+    <p>{{content}}</p>
+  </article>
+  <form class='new-blog-comment-form' class='mb-3'>
+    <div class='mb-3'>
+      <label for='comment' class='form-label'>Add Comment:</label>
+      <textarea class='form-control' id='content-new-blog-comment' rows='3' placeholder='Add a comment...'></textarea>
+    </div>
+    <button type='submit' class='btn btn-primary'>Submit</button>
+  </form>
+  <h2>Comment History:</h2>
+  {{#each comments}}
+  <div class='comment mb-3'>
+    <p>{{comment_text}}</p>
+    <p>By {{user.username}} on {{format_date createdAt}}</p>
+  </div>
+  {{/each}}
+</main>

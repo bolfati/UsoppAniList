@@ -1,29 +1,52 @@
 const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
 
-class Anime extends Model {}
-//Anime Table
-Anime.init({
-  AnimeID: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
+class Anime extends Model { }
+
+Anime.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    videoUrl: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    tags: {
+      type: DataTypes.STRING,
+    },
+    comments_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'comments',
+        key: 'id',
+      },
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
   },
-  Title: {
-    type: DataTypes.STRING,
-    allowNull: false,
+  {
+    sequelize,
+    underscored: true,
+    freezeTableName: true,
+    timestamps: false,
+    modelName: 'anime',
   },
-  CoverImage: {
-    type: DataTypes.STRING,
-    allowNull: true,
-  },
-  Synopsis: {
-    type: DataTypes.TEXT,
-    allowNull: true,
-  },
-  sequelize,
-  timestamps: false,
-  modelName: 'anime',
-});
+);
 
 module.exports = Anime;
