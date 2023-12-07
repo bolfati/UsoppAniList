@@ -33,26 +33,6 @@ router.get('/angelbeats/comments', async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
-// router.post('/addAnime', withAuth, async (req, res) => {
-//   try {
-//     const savingAnime = {
-//       title: 'Angel Beats',
-//       videoUrl: '../../src/animeVids/AngelBeats.mp4',
-//       description:
-//         'The story follows Yuzuru Otonashi, a boy with amnesia who ends up returning to a mysterious high school',
-//     };
-
-//     const savedAnime = await Anime.create(savingAnime);
-//     res.status(201).json(savedAnime);
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).json({ message: 'Error adding anime to database' });
-//   }
-// });
-
-=======
->>>>>>> dd4b9ce5f8c683e5a9365e0f4eab0dffd1087052
 router.post('/angelbeats/:id', async (req, res) => {
   try {
     const message = await Comments.create({
