@@ -25,10 +25,17 @@ Anime.init(
     tags: {
       type: DataTypes.STRING,
     },
-    anime_id: {
+    comments_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'anime',
+        model: 'comments',
+        key: 'id',
+      },
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
         key: 'id',
       },
     },
@@ -36,6 +43,7 @@ Anime.init(
   {
     sequelize,
     underscored: true,
+    freezeTableName: true,
     timestamps: false,
     modelName: 'anime',
   },
