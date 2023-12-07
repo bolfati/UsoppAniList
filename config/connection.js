@@ -13,7 +13,7 @@ if (process.env.JAWSDB_URL) {
     process.env.SESSION_SECRET,
     {
       host: 'localhost',
-      dialect: 'mysql',
+      dialect: 'mysql2',
       port: 3306,
     },
   );
