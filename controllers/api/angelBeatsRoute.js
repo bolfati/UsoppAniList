@@ -21,23 +21,23 @@ router.get('/angelbeats/video', withAuth, async (req, res) => {
   }
 });
 
-router.get('/angelbeats/comments', async (req, res) => {
-  try {
-    const retrievePosts = await Comments.findAll({
-      include: [{ model: User }],
-    });
+// router.get('/angelbeats/comments', async (req, res) => {
+//   try {
+//     const retrievePosts = await Comments.findAll({
+//       include: [{ model: User }],
+//     });
 
-    const transformingPost = retrievePosts.map((retrievePosts) =>
-      retrievePosts.get({ plain: true }),
-    );
-    res.render('angelbeats', {
-      transformingPost,
-    });
-  } catch (err) {
-    console.log(err);
-    return res.status(500).json(err);
-  }
-});
+//     const transformingPost = retrievePosts.map((retrievePosts) =>
+//       retrievePosts.get({ plain: true }),
+//     );
+//     res.render('angelbeats', {
+//       transformingPost,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     return res.status(500).json(err);
+//   }
+// });
 
 router.post('/angelbeats/:id', async (req, res) => {
   try {
