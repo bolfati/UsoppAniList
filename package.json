@@ -1,7 +1,7 @@
 {
   "name": "projectafterstory-db",
   "version": "1.0.0",
-  "description": "",
+  "description": "Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -28,5 +28,6 @@
   "devDependencies": {
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6"
-  }
+  },
+  "keywords": []
 }
