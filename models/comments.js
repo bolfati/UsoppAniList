@@ -1,19 +1,44 @@
 const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt');
 const { Model, DataTypes } = require('sequelize');
+
+class Comments extends Model {}
 
 //Comments Table
 
 Comments.init({
-    commentId: {
-        type: DataTypes.INTERGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
+  comment_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  user_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'user',
+      key: 'id',
     },
-    userId: {
-        type: DataTypes.INTERGER,
-        allowNull: false,
+  },
+  content: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+    validate: {
+      len: [280],
     },
+  },
+  AnimeID: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: 'anime',
+      key: 'AnimeID',
+    },
+  },
+  sequelize,
+  timestamps: true,
+  freezeTableName: true,
+  underscored: true,
+  modelName: 'comments',
+});
 
-})
+module.exports = Comments;
