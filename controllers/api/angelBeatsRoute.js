@@ -11,8 +11,14 @@ router.use(
 );
 
 router.get('/angelbeats/video', withAuth, async (req, res) => {
-  const videoPath = path.join(__dirname, 'animeVids', 'AngelBeats.mp4');
-  res.sendFile(videoPath);
+  try {
+    const videoPath = '/animeVids/AngelBeats.mp4';
+
+    res.render('angelbeats', { videoPath });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get('/angelbeats/comments', async (req, res) => {
