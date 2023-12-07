@@ -1,21 +1,21 @@
 const Anime = require('./anime.js');
-const Comments = require('./comments.js');
+const Comment = require('./comment.js');
 const User = require('./user.js');
 
 //TODO: Define relationships
-Anime.hasMany(Comments, {
+Anime.hasMany(Comment, {
   foreignKey: 'anime_id',
 });
 
-Comments.belongsTo(Anime, {
+Comment.belongsTo(Anime, {
   foreignKey: 'anime_id',
 });
 
-User.hasMany(Comments, {
+User.hasMany(Comment, {
   foreignKey: 'user_id',
 });
 
-Comments.belongsTo(User, {
+Comment.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
@@ -31,4 +31,4 @@ Comments.belongsTo(User, {
 //   foreignKey: 'anime_id',
 //   // otherKey: 'user_id',
 // });
-module.exports = { Anime, Comments, User };
+module.exports = { Anime, Comment, User };

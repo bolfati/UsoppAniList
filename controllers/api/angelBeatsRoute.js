@@ -41,7 +41,7 @@ router.get('/angelbeats/video', withAuth, async (req, res) => {
 
 router.post('/angelbeats/:id', async (req, res) => {
   try {
-    const message = await Comments.create({
+    const message = await Comment.create({
       ...req.body,
       anime_id: req.params.id,
       user_id: req.session.user_id,

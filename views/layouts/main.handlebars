@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brother Hoang's Tech Blog</title>
+  <title>Project Afterstory</title>
   <link rel="stylesheet" type="text/css" href="/css/dashboard.css" />
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -12,24 +12,25 @@
   <header>
     <nav class="grid md:grid-cols-3">
       <div class="container-fluid">
-        <a class="font-bold uppercase p-4 border-b border-yellow-200" href="/">KING ARTHUR'S TECH BLOG</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <a class="font-bold uppercase p-4 border-b border-yellow-200" href="/"></a>
+      <h1 class="font-bold uppercase p-4 border-b border-yellow-200">
+        <a href="/" class="hover:text-red-700 font-bold text-6xl mt-12 pb-2 border-b border-yellow-200">Project Afterstory</a>
+      </h1>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link px-4 border-r-4 border-red-600" href="/">Home</a>
+            </li>
+            <li class="nav-item flex justify-center md:justify-end">
+              <a class="nav-link text-red-700 border-red-200 md:border-x-2 hover:bg-red-100
+                transition ease-out duration-500" href="#" id="blog-logout">Logout</a>
+            </li>
+            <li class="nav-item flex justify-center md:justify-end">
+              <a class="nav-link text-red-700 border-red-200 md:border-x-2 hover:bg-red-100
+                transition ease-out duration-500" href="/login">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" id="blog-logout">Logout</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/signup">Sign Up</a>
+              <a class="nav-link px-4 border-r-4 border-red-600" href="/signup">Sign Up</a>
             </li>
           </ul>
         </div>
@@ -41,20 +42,25 @@
   </div>
   <footer class="bg-dark text-white py-3" style="position: fixed; bottom: 0; width: 100%;">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-6 text-center">
-          <h5>&copy; Designed by Brother Hoang</h5>
-          <h6>&copy; 2023 All Rights Reserved.</h6>
-        </div>
+      <div class="flex justify-center">
+        <div class="btn bg-yellow-100 text-red-800 hover:shadow-inner transform 
+                      hover:scale-125 hover:bg-opacity-50 transition ease-out duration-500 "><a
+            href="https://github.com/Arthur-Bridges">Arthur Bridges Github</a></div>
+        <div src="https://github.com/jaysahhn" class="btn bg-yellow-100 text-red-800 hover:shadow-inner transform 
+                      hover:scale-125 hover:bg-opacity-50 transition ease-out duration-500"><a
+            href="https://github.com/jaysahhn">Jason Mason Github</a></div>
+        <div src="https://github.com/SHoang6702" class="btn bg-yellow-100 text-red-800 hover:shadow-inner transform 
+                      hover:scale-125 hover:bg-opacity-50 transition ease-out duration-500"><a
+            href="https://github.com/SHoang6702">Sebastian Hoang Github</a></div>
+        <div src="https://github.com/bolfati" class="btn bg-yellow-100 text-red-800 hover:shadow-inner transform 
+                      hover:scale-125 hover:bg-opacity-50 transition ease-out duration-500"><a
+            href="https://github.com/bolfati">Bijan Olfati Github</a></div>
       </div>
     </div>
   </footer>
-  <script src="/js/delete-post.js"></script>
   <script src="/js/login.js"></script>
   <script src="/js/logout.js"></script>
-  <script src="/js/new-post.js"></script>
   <script src="/js/signup.js"></script>
-  <script src="/js/edit-post.js"></script>
   <script src="/js/new-comment.js"></script>
   </script>
 
