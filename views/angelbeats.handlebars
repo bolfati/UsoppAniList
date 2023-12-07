@@ -14,13 +14,13 @@
           class='form-control'
           id='content-new-blog-comment'
           rows='3'
-          placeholder='Add a comment...'
+          placeholder='Add a comment :3'
         ></textarea>
       </div>
       <button type='submit' class='btn btn-primary'>Submit</button>
     </form>
   <h2>Comment History:</h2>
-  {{#each comments}}
+  {{#each comment}}
     <div class='comment mb-3'>
       <p>{{comment_text}}</p>
       <p>By {{user.username}} on {{format_date createdAt}}</p>

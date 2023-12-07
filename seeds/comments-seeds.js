@@ -1,18 +1,18 @@
-const { Comments } = require('../models');
+const { Comment } = require('../models');
 
 const commentData = [
   {
-    content: 'I love this anime!!',
+    comment_text: 'I love this anime!!',
     user_id: 1,
     anime_id: 1,
   },
   {
-    content: 'Mid Anime',
+    comment_text: 'Mid Anime',
     user_id: 2,
     anime_id: 2,
   },
   {
-    content: 'This made me cry',
+    comment_text: 'This made me cry',
     user_id: 3,
     anime_id: 3,
   },
