@@ -48,7 +48,7 @@ router.get('/violetevergarden', withAuth, async (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/');
+    //res.redirect('/');
     return;
   }
   res.render('login');
@@ -56,7 +56,7 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/');
+    //res.redirect('/');
     return;
   }
   res.render('signup');
