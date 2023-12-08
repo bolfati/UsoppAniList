@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
 
-class Anime extends Model {}
+class Anime extends Model { }
 
 Anime.init(
   {
