@@ -2,26 +2,28 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+This project houses a sophisticated full-stack application designed to exemplify industry best practices and demonstrate proficiency in web development technologies to create an anime-based application that allows users to watch trailers of different anime based on different genres. 
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Node Package Manager (NPM), Sequelize, Bcrypt, dontenv, eslint, prettier, express, handlebars, nodemon, mysql2
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Heroku
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+Deployed Application link - https://projectafterstory-db-2c1eff629d73.herokuapp.com/
 
-    `    ![alt text](assets/images/screenshot.png)
+[Home Page](https://i.gyazo.com/6aed2f81231344583de15f5b7704f292.jpg)
+
+[Sign-in](https://i.gyazo.com/df76238d0ff80f989a3733b867469a84.png)
 
 ## Credits
+
+https://www.w3schools.com/ || 
+https://stackoverflow.com/ || 
+https://developer.mozilla.org/en-US/ || 
+https://www.youtube.com/
 
 https://github.com/Arthur-Bridges - Arthur Bridges
 https://github.com/Jaysahhn - Jason Mason
